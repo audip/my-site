@@ -29,14 +29,14 @@ function serverWorking(response, absPath) {
         }
     });
 }
-        
+
 var server = http.createServer(function(request, response) {
     var filePath = false;
 
     if (request.url == "/") {
-        filePath = "app/index.html";
+        filePath = "dist/index.html";
     } else {
-        filePath = "app" + request.url;
+        filePath = "dist" + request.url;
     }
 
     var absPath = "./" + filePath;
