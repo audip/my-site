@@ -4,7 +4,7 @@
     "description" : "My minimalistic personal website",
     "dependencies" : {
         "mime" : "~1.2.7"
-  }
+  },
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "babel-core": "^6.0.15",
