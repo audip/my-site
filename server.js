@@ -34,9 +34,9 @@ var server = http.createServer(function(request, response) {
     var filePath = false;
 
     if (request.url == "/") {
-        filePath = "dist/index.html";
+        filePath = "app/index.html";
     } else {
-        filePath = "dist" + request.url;
+        filePath = "app" + request.url;
     }
 
     var absPath = "./" + filePath;
