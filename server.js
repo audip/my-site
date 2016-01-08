@@ -3,9 +3,9 @@ var fs = require("fs");
 var path = require("path");
 var mime = require("mime");
 
-function send404(response) {
-    response.writeHead(404, {"Content-type" : "text/plain"});
-    response.write("Error 404: resource not found");
+function send404(response, filePath) {
+    response.writeHead(404, {"Content-type" : mime.lookup(path.basename(filePath))});
+    //response.write("Error 404: resource not found");
     response.end();
 }
 
@@ -19,7 +19,8 @@ function serverWorking(response, absPath) {
         if (exists) {
             fs.readFile(absPath, function(err, data) {
                 if (err) {
-                    send404(response)
+                    absPath="./app/404.html";
+                    send404(response, absPath);
                 } else {
                     sendPage(response, absPath, data);
                 }
