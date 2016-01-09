@@ -6,8 +6,10 @@ var mime = require("mime");
 var eMail = require("./email.js");
 
 var app = express();
+
 app.use(bodyParser.text({ type: 'text/html' }));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('./app'));
 
 function send404(response) {
     //response.writeHead(404, {"Content-type" : mime.lookup(path.basename(filePath))});
@@ -26,7 +28,7 @@ app.get('/', function(req, res) {
     if (req.url == "/") {
         filePath = "app/index.html";
     } else {
-        filePath = "app" + req.url;
+        filePath = "app/" + req.url;
     }
 
     var absPath = "./" + filePath;
@@ -40,8 +42,7 @@ app.get('/', function(req, res) {
     });
 });
 
-app.post('/', function(req, res){
-
+app.post('/', function(req, res) {
     var username = req.body.name;
     var email = req.body.email;
     var phone = req.body.phone;
