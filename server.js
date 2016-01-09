@@ -45,31 +45,37 @@ app.get('/', function(req, res){
 app.post('/', function(req, res){
 
     //console.log("I am here");
-    console.log(req.body.name);
+    var username = req.body.name;
+    var email = req.body.email;
+    var phone = req.body.phone;
+    var msg = req.body.msgtext;
+    //console.log(username+" "+email+" "+phone+" "+msg);
 
     // create reusable transporter object using the default SMTP transport
-    var transporter = nodemailer.createTransport('smtps://aditya.p1993@hotmail.com:GoogleEarth1993@smtp.hotmail.com');
+    var transporter = nodemailer.createTransport('smtps://aditya.p1993%40hotmail.com:GoogleEarth1993@smtp-mail.outlook.com');
 
-    // NB! No need to recreate the transporter object. You can use
-    // the same transporter object for all e-mails
+    var fromUser = username+' <'+email+'>';
+    var toUser = 'Aditya Purandare <hello@adityapurandare.ml>';
+    var sub = 'Hello to you - Aditya';
+    var bodyText = msg + " Phone: " + phone;
+    console.log(fromUser + " " + toUser + " " + sub + " " + bodyText);
 
     // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: 'Fred Foo ✔ <foo@blurdybloop.com>', // sender address
-        to: 'Aditya Purandare <hello@adityapurandare.ml>', // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world ✔', // plaintext body
-        html: '<b>Hello world ✔</b>' // html body
+        from: fromUser, // sender address
+        to: toUser, // list of receivers
+        subject: sub, // Subject line
+        text: bodyText, // plaintext body
+        html: '<p> ' + bodyText + ' </p>' // html body
     };
 
     // send mail with defined transport object
-    /*transporter.sendMail(mailOptions, function(error, info){
+    transporter.sendMail(mailOptions, function(error, info){
         if(error){
             return console.log(error);
         }
         console.log('Message sent: ' + info.response);
-
-    });*/
+    });
 });
 
 app.listen(process.env.PORT || 3000);

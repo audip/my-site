@@ -6,7 +6,7 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "mime": "~1.2.7",
-    "nodemailer": "~0.7.0"
+    "nodemailer": "^2.0.0-rc.2"
   },
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
