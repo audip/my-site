@@ -1,6 +1,13 @@
-[![Build Status](https://travis-ci.org/audip/my-site.svg)](https://travis-ci.org/audip/my-site)
+# Aditya Purandare's Website
 
-# [![Web Starter Kit](https://cloud.githubusercontent.com/assets/110953/11445049/f05512ba-9520-11e5-8fdb-8c8eb5f690d0.jpg)](https://github.com/google/web-starter-kit/releases/latest)
+[![Build Status](https://travis-ci.org/audip/my-site.svg)](https://travis-ci.org/audip/my-site)
+[![Code Climate](https://codeclimate.com/github/audip/my-site/badges/gpa.svg)](https://codeclimate.com/github/audip/my-site)
+[![codecov.io](https://codecov.io/github/audip/my-site/coverage.svg?branch=master)](https://codecov.io/github/audip/my-site?branch=master)
+
+
+# Technicals
+
+Built on Google's Web Starter Kit on Node.js platform and one-page design
 
 ## Overview
 
