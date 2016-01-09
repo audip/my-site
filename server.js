@@ -3,10 +3,9 @@ var bodyParser = require("body-parser");
 var fs = require("fs");
 var path = require("path");
 var mime = require("mime");
+var nodemailer = require('nodemailer');
 
 var app = express();
-
-app.use(bodyParser.text({ type: 'text/html' }));
 
 function send404(response) {
     //response.writeHead(404, {"Content-type" : mime.lookup(path.basename(filePath))});
@@ -21,6 +20,7 @@ function sendPage(response, filePath, fileContents) {
 
 app.use(express.static('./app'));
 app.use(bodyParser.text({ type: 'text/html' }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res){
     var filePath = false;
@@ -44,12 +44,8 @@ app.get('/', function(req, res){
 
 app.post('/', function(req, res){
 
-    console.log("I am here");
-
-    var nodemailer = require('nodemailer');
-    var bodyParser = require('body-parser');
-
-    //console.log(req.body.username);
+    //console.log("I am here");
+    console.log(req.body.name);
 
     // create reusable transporter object using the default SMTP transport
     var transporter = nodemailer.createTransport('smtps://aditya.p1993@hotmail.com:GoogleEarth1993@smtp.hotmail.com');
