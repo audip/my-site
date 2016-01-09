@@ -66,7 +66,6 @@ app.post('/', function(req, res){
         to: toUser, // list of receivers
         subject: sub, // Subject line
         text: bodyText, // plaintext body
-        html: '<p> ' + bodyText + ' </p>' // html body
     };
 
     // send mail with defined transport object
