@@ -4,6 +4,7 @@
   "description": "My minimalistic personal website",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "codecov.io": "^0.1.6",
     "express": "^4.13.3",
     "mime": "~1.2.7",
     "nodemailer": "~0.7.1"
