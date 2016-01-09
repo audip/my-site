@@ -12,16 +12,16 @@ p {
     font-size: 14px;
     line-height: 1.75
 }
-p.large {
+.large {
     font-size: 16px
 }
-a,
+/*a,
 a:hover,
 a:focus,
 a:active,
 a.active {
     outline: 0
-}
+}*/
 a {
     color: #fed136
 }
@@ -195,6 +195,7 @@ fieldset[disabled] .btn-xl.active {
     .navbar-default {
         background-color: transparent;
         padding: 25px 0;
+        -o-transition: padding .3s;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -202,6 +203,7 @@ fieldset[disabled] .btn-xl.active {
     }
     .navbar-default .navbar-brand {
         font-size: 2em;
+        -o-transition: all .3s;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s
@@ -219,7 +221,7 @@ fieldset[disabled] .btn-xl.active {
 }
 header {
     background-image: url(../images/header-bg.jpg);
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     -webkit-background-size: cover;
@@ -249,17 +251,15 @@ header .intro-text .intro-heading {
     margin-bottom: 25px
 }
 @media (min-width: 768px) {
-    header .intro-text {
+    header .intro-text .intro-lead-in {
         /*padding-top: 300px;
         padding-bottom: 200px */
-    }
-    header .intro-text .intro-lead-in {
-        padding-top: 50px;
+        padding-top: 60px;
         font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-style: italic;
         font-size: 40px;
         line-height: 40px;
-        margin-bottom: 25px
+        margin-bottom: 25px;
     }
     header .intro-text .intro-heading {
         font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -267,18 +267,18 @@ header .intro-text .intro-heading {
         font-weight: 700;
         font-size: 75px;
         line-height: 75px;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
     }
 }
 section {
     padding: 100px 0
 }
-section h2.section-heading {
+section .section-heading {
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 15px
 }
-section h3.section-subheading {
+section .section-subheading {
     font-size: 16px;
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: none;
@@ -312,6 +312,7 @@ section h3.section-subheading {
     height: 100%;
     opacity: 0;
     transition: all ease .5s;
+    -o-transition: all ease .5s;
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s
 }
@@ -331,8 +332,8 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
     margin-top: -12px
 }
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content,
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
     margin: 0
 }
 #portfolio .portfolio-item .portfolio-caption {
@@ -420,7 +421,7 @@ section h3.section-subheading {
     border: 7px solid #f1f1f1;
     text-align: center
 }
-.timeline>li .timeline-image h4 {
+.timeline>li .timeline-image {
     font-size: 10px;
     margin-top: 12px;
     line-height: 14px
@@ -445,11 +446,11 @@ section h3.section-subheading {
 .timeline>li:last-child {
     margin-bottom: 0
 }
-.timeline .timeline-heading h4 {
+.timeline .timeline-heading {
     margin-top: 0;
     color: inherit
 }
-.timeline .timeline-heading h4.subheading {
+.timeline .timeline-heading .subheading {
     text-transform: none
 }
 .timeline .timeline-body>p,
@@ -476,7 +477,7 @@ section h3.section-subheading {
         left: 50%;
         margin-left: -50px
     }
-    .timeline>li .timeline-image h4 {
+    .timeline>li .timeline-image {
         font-size: 13px;
         margin-top: 16px;
         line-height: 18px
@@ -499,7 +500,7 @@ section h3.section-subheading {
         height: 150px;
         margin-left: -75px
     }
-    .timeline>li .timeline-image h4 {
+    .timeline>li .timeline-image {
         font-size: 18px;
         margin-top: 30px;
         line-height: 26px
@@ -520,7 +521,7 @@ section h3.section-subheading {
         height: 170px;
         margin-left: -85px
     }
-    .timeline>li .timeline-image h4 {
+    .timeline>li .timeline-image {
         margin-top: 40px
     }
     .timeline>li.timeline-inverted>.timeline-panel {
@@ -535,7 +536,7 @@ section h3.section-subheading {
     margin: 0 auto;
     border: 7px solid #fff
 }
-.team-member h4 {
+.team-member {
     margin-top: 25px;
     margin-bottom: 0;
     text-transform: none
@@ -543,7 +544,7 @@ section h3.section-subheading {
 .team-member p {
     margin-top: 0
 }
-aside.clients img {
+.clients img {
     margin: 50px auto
 }
 section#contact {
@@ -552,64 +553,64 @@ section#contact {
     background-position: center;
     background-repeat: no-repeat
 }
-section#contact .section-heading {
+#contact .section-heading {
     color: #fff
 }
-section#contact .form-group {
+#contact .form-group {
     margin-bottom: 25px
 }
-section#contact .form-group input,
-section#contact .form-group textarea {
+#contact .form-group input,
+#contact .form-group textarea {
     padding: 20px
 }
-section#contact .form-group input.form-control {
+#contact .form-group input.form-control {
     height: auto
 }
-section#contact .form-group textarea.form-control {
+#contact .form-group textarea.form-control {
     height: 236px
 }
-section#contact .form-control:focus {
+#contact .form-control:focus {
     border-color: #fed136;
     box-shadow: none
 }
-section#contact::-webkit-input-placeholder {
+#contact::-webkit-input-placeholder {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     color: #bbb
 }
-section#contact:-moz-placeholder {
+#contact:-moz-placeholder {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     color: #bbb
 }
-section#contact::-moz-placeholder {
+#contact::-moz-placeholder {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     color: #bbb
 }
-section#contact:-ms-input-placeholder {
+#contact:-ms-input-placeholder {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     color: #bbb
 }
-section#contact .text-danger {
+#contact .text-danger {
     color: #e74c3c
 }
 footer {
     padding: 25px 0;
     text-align: center
 }
-footer span.copyright {
+.copyright {
     line-height: 40px;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     text-transform: none
 }
-footer ul.quicklinks {
+.quicklinks {
     margin-bottom: 0;
     line-height: 40px;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -629,6 +630,7 @@ ul.social-buttons li a {
     line-height: 40px;
     color: #fff;
     outline: 0;
+    -o-transition: all .3s;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s
@@ -647,6 +649,7 @@ ul.social-buttons li a:active {
 .portfolio-modal .modal-content {
     border-radius: 0;
     background-clip: border-box;
+    -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     border: 0;
@@ -654,20 +657,20 @@ ul.social-buttons li a:active {
     padding: 100px 0;
     text-align: center
 }
-.portfolio-modal .modal-content h2 {
+.portfolio-modal .modal-content {
     margin-bottom: 15px;
     font-size: 3em
 }
 .portfolio-modal .modal-content p {
     margin-bottom: 30px
 }
-.portfolio-modal .modal-content p.item-intro {
+.portfolio-modal .modal-content .item-intro {
     margin: 20px 0 30px;
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: italic;
     font-size: 16px
 }
-.portfolio-modal .modal-content ul.list-inline {
+.portfolio-modal .modal-content .list-inline {
     margin-bottom: 30px;
     margin-top: 0
 }
@@ -691,18 +694,20 @@ ul.social-buttons li a:active {
     width: 1px;
     margin-left: 35px;
     background-color: #222;
-    transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    z-index: 1051
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 1051;
 }
 .portfolio-modal .close-modal .lr .rl {
     height: 75px;
     width: 1px;
     background-color: #222;
-    transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
     z-index: 1052
 }
 .portfolio-modal .modal-backdrop {
