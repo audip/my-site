@@ -1,11 +1,16 @@
-var http = require("http");
+var express = require("express");
+var bodyParser = require("body-parser");
 var fs = require("fs");
 var path = require("path");
 var mime = require("mime");
 
-function send404(response, filePath) {
-    response.writeHead(404, {"Content-type" : mime.lookup(path.basename(filePath))});
-    //response.write("Error 404: resource not found");
+var app = express();
+
+app.use(bodyParser.text({ type: 'text/html' }));
+
+function send404(response) {
+    //response.writeHead(404, {"Content-type" : mime.lookup(path.basename(filePath))});
+    response.write("Error 404: resource not found");
     response.end();
 }
 
@@ -14,34 +19,30 @@ function sendPage(response, filePath, fileContents) {
     response.end(fileContents);
 }
 
-function serverWorking(response, absPath) {
-    fs.exists(absPath, function(exists) {
-        if (exists) {
-            fs.readFile(absPath, function(err, data) {
-                if (err) {
-                    absPath="./app/404.html";
-                    send404(response, absPath);
-                } else {
-                    sendPage(response, absPath, data);
-                }
-            });
-        } else {
-            send404(response);
-        }
-    });
-}
+app.use(express.static('./app'));
 
-var server = http.createServer(function(request, response) {
+app.get('/', function(req, res){
     var filePath = false;
 
-    if (request.url == "/") {
+    if (req.url == "/") {
         filePath = "app/index.html";
     } else {
-        filePath = "app" + request.url;
+        filePath = "app" + req.url;
     }
 
     var absPath = "./" + filePath;
-    serverWorking(response, absPath);
+
+    fs.readFile(absPath, function(err, data) {
+        if (err) {
+            send404(res);
+        } else {
+            sendPage(res, absPath, data);
+        }
+    });
 });
 
-var port_number = server.listen(process.env.PORT || 3000);
+app.post('/mail', function(req, res){
+    console.log("Mail sent");
+});
+
+app.listen(process.env.PORT || 3000);
