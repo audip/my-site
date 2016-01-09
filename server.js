@@ -1,4 +1,5 @@
 var express = require("express");
+var http = require("http");
 var bodyParser = require("body-parser");
 var fs = require("fs");
 var path = require("path");
@@ -6,6 +7,7 @@ var mime = require("mime");
 var eMail = require("./email.js");
 
 var app = express();
+var server = http.createServer(app);
 
 app.use(bodyParser.text({ type: 'text/html' }));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -50,4 +52,4 @@ app.post('/', function(req, res) {
     eMail(username, email, phone, msg);
 });
 
-app.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 3000);
