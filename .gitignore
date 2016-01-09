@@ -4,3 +4,4 @@ dist/
 app.yaml
 email.js
 server*
+*.log

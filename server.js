@@ -3,9 +3,11 @@ var bodyParser = require("body-parser");
 var fs = require("fs");
 var path = require("path");
 var mime = require("mime");
-var nodemailer = require('nodemailer');
+var eMail = require("./email.js");
 
 var app = express();
+app.use(bodyParser.text({ type: 'text/html' }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 function send404(response) {
     //response.writeHead(404, {"Content-type" : mime.lookup(path.basename(filePath))});
@@ -18,11 +20,7 @@ function sendPage(response, filePath, fileContents) {
     response.end(fileContents);
 }
 
-app.use(express.static('./app'));
-app.use(bodyParser.text({ type: 'text/html' }));
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
     var filePath = false;
 
     if (req.url == "/") {
@@ -44,37 +42,11 @@ app.get('/', function(req, res){
 
 app.post('/', function(req, res){
 
-    //console.log("I am here");
     var username = req.body.name;
     var email = req.body.email;
     var phone = req.body.phone;
     var msg = req.body.msgtext;
-    //console.log(username+" "+email+" "+phone+" "+msg);
-
-    // create reusable transporter object using the default SMTP transport
-    var transporter = nodemailer.createTransport('smtps://aditya.p1993%40hotmail.com:GoogleEarth1993@smtp-mail.outlook.com');
-
-    var fromUser = username+' <'+email+'>';
-    var toUser = 'Aditya Purandare <hello@adityapurandare.ml>';
-    var sub = 'Hello to you - Aditya';
-    var bodyText = msg + " Phone: " + phone;
-    console.log(fromUser + " " + toUser + " " + sub + " " + bodyText);
-
-    // setup e-mail data with unicode symbols
-    var mailOptions = {
-        from: fromUser, // sender address
-        to: toUser, // list of receivers
-        subject: sub, // Subject line
-        text: bodyText, // plaintext body
-    };
-
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-            return console.log(error);
-        }
-        console.log('Message sent: ' + info.response);
-    });
+    eMail(username, email, phone, msg);
 });
 
 app.listen(process.env.PORT || 3000);
