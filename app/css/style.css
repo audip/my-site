@@ -257,7 +257,7 @@ fieldset[disabled] .btn-xl.active {
     .header .intro-text .intro-lead-in {
         /*padding-top: 300px;
         padding-bottom: 200px */
-        padding-top: 60px;
+        padding-top: 50px;
         font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-style: italic;
         font-size: 40px;
@@ -270,7 +270,7 @@ fieldset[disabled] .btn-xl.active {
         font-weight: 700;
         font-size: 75px;
         line-height: 75px;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
     }
 }
 section {
