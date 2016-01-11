@@ -179,9 +179,7 @@
 	opacity: 0 ;
 }
 
-#navbar .loaded{
-	opacity: 1
-}
+
 
 @-webkit-keyframes animLoadedHeader {
 	to { -webkit-transform: translate3d(0,-100%,0); }
@@ -191,14 +189,15 @@
 	to { -webkit-transform: translate3d(0,-100%,0); transform: translate3d(0,-100%,0); }
 }
 
+/*Problematic Section starts here*/
 /* Content animations */
-.loaded .ip-main h2,
-.loaded .ip-main .browser,
+/*
 .loaded .ip-main .browser,
 .loaded {
 	-webkit-animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
 	animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
-}
+}*/
+/*Problematic section ends here*/
 
 .loaded .ip-main .browser,
 .loaded .ip-main .browser {

@@ -28,7 +28,7 @@
 		};
 
 		// disable scrolling
-		window.addEventListener( 'scroll', noscroll );
+		//window.addEventListener( 'scroll', noscroll );
 
 		// initial animation
 		classie.add( container, 'loading' );
@@ -65,7 +65,7 @@
 							}
 
 							classie.add( document.body, 'layout-switch' );
-							window.removeEventListener( 'scroll', noscroll );
+							//window.removeEventListener( 'scroll', noscroll );
 						};
 
 						if( support.animations ) {
