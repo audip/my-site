@@ -5,3 +5,7 @@ app.yaml
 email.js
 server*
 *.log
+app/google*
+.imdone
+.editorconfig
+*.log
