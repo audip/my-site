@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/audip/my-site.svg)](https://travis-ci.org/audip/my-site)
 [![Code Climate](https://codeclimate.com/github/audip/my-site/badges/gpa.svg)](https://codeclimate.com/github/audip/my-site)
-[![codecov.io](https://codecov.io/github/audip/my-site/coverage.svg?branch=master)](https://codecov.io/github/audip/my-site?branch=master)
+[![Stories in Ready](https://badge.waffle.io/audip/my-site.svg?label=ready&title=Ready)](http://waffle.io/audip/my-site)
 
 
 # Technicals
