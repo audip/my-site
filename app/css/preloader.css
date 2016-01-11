@@ -8,7 +8,7 @@
 	background: #000;
 }
 
-.ip-header h1 {
+.ip-header {
 	margin: 0;
 }
 
@@ -27,6 +27,9 @@
 	top: 0;
 	height: 100%;
 	-webkit-transform: translate3d(0,25%,0);
+	-moz-transform: translate3d(0,25%,0);
+	-ms-transform: translate3d(0,25%,0);
+	-o-transform: translate3d(0,25%,0);
 	transform: translate3d(0,25%,0);
 }
 
@@ -54,12 +57,14 @@
 	stroke-width: 6;
 }
 
-.ip-header .ip-loader svg path.ip-loader-circlebg {
+.ip-header .ip-loader svg .ip-loader-circlebg {
 	stroke: #fff;
 }
 
 .ip-header .ip-loader svg path.ip-loader-circle {
 	-webkit-transition: stroke-dashoffset 0.2s;
+	-moz-transition: stroke-dashoffset 0.2s;
+	-o-transition: stroke-dashoffset 0.2s;
 	transition: stroke-dashoffset 0.2s;
 	stroke: #fed136;
 }
@@ -120,11 +125,13 @@
 
 .loading .ip-loader {
 	-webkit-animation-delay: 0.2s;
+	-moz-animation-delay: 0.2s;
 	animation-delay: 0.2s;
 }
 
 @-webkit-keyframes animInitialHeader {
-	from { opacity: 0; -webkit-transform: translate3d(0,800px,0); }
+	from { opacity: 0; -webkit-transform: translate3d(0,800px,0);
+	transform: translate3d(0,800px,0); }
 }
 
 @keyframes animInitialHeader {
@@ -139,8 +146,12 @@
 
 .loaded .ip-logo {
 	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	-ms-transform-origin: 50% 0;
+	-o-transform-origin: 50% 0;
 	transform-origin: 50% 0;
 	-webkit-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+	-moz-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
 	animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
 }
 
@@ -154,11 +165,13 @@
 
 .loaded .ip-loader {
 	-webkit-animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+	-moz-animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
 	animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
 }
 
 @-webkit-keyframes animLoadedLoader {
-	to { opacity: 0; -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); }
+	to { opacity: 0; -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1);
+	transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1);  }
 }
 
 @keyframes animLoadedLoader {
@@ -168,6 +181,8 @@
 /* Change the color of the logo */
 .loaded .ip-logo svg path {
 	-webkit-transition: all 0.5s ease 0.3s;
+	-o-transition: all 0.5s ease 0.3s;
+	-moz-transition: all 0.5s ease 0.3s;
 	transition: all 0.5s ease 0.3s;
 	fill: #fff;
 }
@@ -175,6 +190,7 @@
 /* Header animation when loading finishes */
 .loaded .ip-header {
 	-webkit-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
+	-moz-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
 	animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
 	opacity: 0 ;
 }
@@ -182,7 +198,8 @@
 
 
 @-webkit-keyframes animLoadedHeader {
-	to { -webkit-transform: translate3d(0,-100%,0); }
+	to { -webkit-transform: translate3d(0,-100%,0);
+	transform: translate3d(0,-100%,0);}
 }
 
 @keyframes animLoadedHeader {
@@ -202,21 +219,25 @@
 .loaded .ip-main .browser,
 .loaded .ip-main .browser {
 	-webkit-animation-delay: 0.1s;
+	-moz-animation-delay: 0.1s;
 	animation-delay: 0.1s;
 }
 
 .loaded .ip-main .browser {
 	-webkit-animation-delay: 0.15s;
+	-moz-animation-delay: 0.15s;
 	animation-delay: 0.15s;
 }
 
 .loaded .ip-main .browser {
 	-webkit-animation-delay: 0.2s;
+	-moz-animation-delay: 0.2s;
 	animation-delay: 0.2s;
 }
 
 @-webkit-keyframes animLoadedContent {
-	from { opacity: 0; -webkit-transform: translate3d(0,200px,0); }
+	from { opacity: 0; -webkit-transform: translate3d(0,200px,0);
+	transform: translate3d(0,200px,0); }
 }
 
 @keyframes animLoadedContent {
@@ -226,20 +247,23 @@
 /* Change layout class for header */
 .layout-switch .ip-header {
 	position: absolute;
-	margin: 0px 0px;
+	margin: 0 0;
 }
 
 /* No JS */
 .no-js .ip-header {
 	position: relative;
-	min-height: 0px;
+	min-height: 0;
 }
 
 .no-js .ip-header .ip-logo {
-	margin: 0px 0px;
+	margin: 0 0;
 	height: 180px;
 	opacity: 1;
 	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
 	transform: none;
 }
 
@@ -251,7 +275,7 @@
 
 @media screen and (max-width: 45em) {
 
-	.ip-main h2 {
+	.ip-main{
 		font-size: 2.25em;
 		font-size: 10vw;
 	}
@@ -259,5 +283,5 @@
 }
 .padder{
 	padding: 5% 5%;
-	margin: 0px 2%;
+	margin: 0 2%;
 }
