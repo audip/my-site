@@ -132,8 +132,8 @@
 }
 
 /* Header elements when loading finishes */
-.loaded .ip-logo,
-.loaded .ip-loader {
+
+.loaded .ip-logo, .loaded .ip-loader {
 	opacity: 1;
 }
 
@@ -176,6 +176,11 @@
 .loaded .ip-header {
 	-webkit-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
 	animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
+	opacity: 0 ;
+}
+
+#navbar .loaded{
+	opacity: 1
 }
 
 @-webkit-keyframes animLoadedHeader {
@@ -252,20 +257,6 @@
 		font-size: 10vw;
 	}
 
-}
-.main-container{
-	margin: 0px 0px;
-	padding: 0px 0px;
-	width: 100%;
-}
-
-loaded>.ip-logo .loaded>path{
-	opacity: 0;
-}
-@media (min-width: 1200px){
-	.container{
-		padding: 0px 15px;
-	}
 }
 .padder{
 	padding: 5% 5%;
