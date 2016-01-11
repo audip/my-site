@@ -219,8 +219,8 @@ fieldset[disabled] .btn-xl.active {
         font-size: 1.5em
     }
 }
-header {
-    background-image: url(../images/header-bg.jpg);
+.header1 {
+    background-image: url('../images/header-bg.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -231,18 +231,18 @@ header {
     text-align: center;
     color: #fff
 }
-header .intro-text {
+.header1 .intro-text {
     padding-top: 100px;
     padding-bottom: 50px
 }
-header .intro-text .intro-lead-in {
+.header1 .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: italic;
     font-size: 22px;
     line-height: 22px;
     margin-bottom: 25px
 }
-header .intro-text .intro-heading {
+.header1 .intro-text .intro-heading {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
@@ -251,7 +251,7 @@ header .intro-text .intro-heading {
     margin-bottom: 25px
 }
 @media (min-width: 768px) {
-    header .intro-text .intro-lead-in {
+    .header1 .intro-text .intro-lead-in {
         /*padding-top: 300px;
         padding-bottom: 200px */
         padding-top: 60px;
@@ -261,7 +261,7 @@ header .intro-text .intro-heading {
         line-height: 40px;
         margin-bottom: 25px;
     }
-    header .intro-text .intro-heading {
+    .header1 .intro-text .intro-heading {
         font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-transform: uppercase;
         font-weight: 700;
