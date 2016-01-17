@@ -279,7 +279,17 @@
 		font-size: 2.25em;
 		font-size: 10vw;
 	}
+	.ip-inner img{
+		height: 200px;
+		width:150px;
+	}
+	.navbar-right li{
+		font-size: 16px;
+	}
+	.foot{
+		font-size: 16px;
 
+	}
 }
 .padder{
 	padding: 5% 5%;
