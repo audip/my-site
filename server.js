@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var fs = require("fs");
 var path = require("path");
 var mime = require("mime");
-var eMail = require("./email.js");
+// var eMail = require("./email.js");
 
 var app = express();
 var server = http.createServer(app);
@@ -44,12 +44,12 @@ app.get('/', function(req, res) {
     });
 });
 
-app.post('/', function(req, res) {
-    var username = req.body.name;
-    var email = req.body.email;
-    var phone = req.body.phone;
-    var msg = req.body.msgtext;
-    eMail(username, email, phone, msg);
-});
+// app.post('/', function(req, res) {
+//     var username = req.body.name;
+//     var email = req.body.email;
+//     var phone = req.body.phone;
+//     var msg = req.body.msgtext;
+//     eMail(username, email, phone, msg);
+// });
 
 server.listen(process.env.PORT || 3000);
