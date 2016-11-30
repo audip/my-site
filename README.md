@@ -15,7 +15,7 @@ Personal website built in javascript using Node.js, http://www.adityapurandare.c
 
 ## License
 
-This project is licensed unde the Apache License, see the [LICENCE](https://github.com/audip/my-site/blob/master/LICENSE) for more details
+This project is licensed unde the Apache License, see the [LICENSE](https://github.com/audip/my-site/blob/master/LICENSE) for more details
 
 ## Acknowledgements
 
