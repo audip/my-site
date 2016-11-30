@@ -4,11 +4,20 @@
 [![Code Climate](https://codeclimate.com/github/audip/my-site/badges/gpa.svg)](https://codeclimate.com/github/audip/my-site)
 [![Stories in Ready](https://badge.waffle.io/audip/my-site.svg?label=ready&title=Ready)](http://waffle.io/audip/my-site)
 
+Personal website built in javascript using Node.js, http://www.adityapurandare.com
 
-# Technicals
+## Built with
 
-Built on Google's Web Starter Kit on Node.js platform and one-page design
+- [Web Starter Kit](http://developers.google.com/web/tools/starter-kit/) - Google's boilerplate template for web apps
+- [Bootstrap](http://getbootstrap.com/) - framework for responsive layouts
+- [Travis-CI](http://travis-ci.org/) - continous integration of commits
+- [Heroku](http://heroku.com) - continous deployment of builds
 
-## Overview
+## License
 
-[Web Starter Kit](https://developers.google.com/web/starter-kit) is an opinionated boilerplate for web development. Tools for building a great experience across many devices and [performance oriented](#web-performance). Helping you to stay productive following the best practices outlined in Google's [Web Fundamentals](https://developers.google.com/web/fundamentals). A solid starting point for both professionals and newcomers to the industry.
+This project is licensed unde the Apache License, see the LICENCE for more details
+
+## Acknowledgements
+
+- Alok Satpathy for helping me with the design.
+
