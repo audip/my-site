@@ -1,0 +1,3 @@
+[submodule "app/isysgroup3.github.io"]
+	path = app/isysgroup3.github.io
+	url = git@github.com:isysgroup3/isysgroup3.github.io.git
